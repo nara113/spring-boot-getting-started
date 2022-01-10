@@ -24,5 +24,6 @@ public class PropertiesRunner implements ApplicationRunner {
         System.out.println("age : " + age);
         System.out.println("test name : " + testProperties.getName());
         System.out.println("test age : " + testProperties.getAge());
+        System.out.println("test second : " + testProperties.getSecond());
     }
 }
