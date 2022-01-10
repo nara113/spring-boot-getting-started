@@ -1,5 +1,6 @@
 package com.study;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -14,9 +15,14 @@ public class PropertiesRunner implements ApplicationRunner {
     @Value("${age}")
     private int age;
 
+    @Autowired
+    private TestProperties testProperties;
+
     @Override
     public void run(ApplicationArguments args) throws Exception {
         System.out.println("name : " + name);
         System.out.println("age : " + age);
+        System.out.println("test name : " + testProperties.getName());
+        System.out.println("test age : " + testProperties.getAge());
     }
 }
