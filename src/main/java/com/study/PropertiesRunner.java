@@ -16,6 +16,9 @@ public class PropertiesRunner implements ApplicationRunner {
     private int age;
 
     @Autowired
+    private String hello;
+
+    @Autowired
     private TestProperties testProperties;
 
     @Override
@@ -25,5 +28,6 @@ public class PropertiesRunner implements ApplicationRunner {
         System.out.println("test name : " + testProperties.getName());
         System.out.println("test age : " + testProperties.getAge());
         System.out.println("test second : " + testProperties.getSecond());
+        System.out.println("hello : " + hello);
     }
 }
