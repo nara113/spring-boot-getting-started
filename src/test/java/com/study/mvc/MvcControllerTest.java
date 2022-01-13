@@ -30,6 +30,7 @@ public class MvcControllerTest {
                 .content(user))
             .andExpect(status().isOk())
             .andExpect(jsonPath("$.name", is(equalTo("me"))))
+            .andExpect(jsonPath("$.name", is("me")))
             .andExpect(jsonPath("$.password", is(equalTo(123))));
     }
 
