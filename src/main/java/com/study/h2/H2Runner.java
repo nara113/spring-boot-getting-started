@@ -23,7 +23,9 @@ public class H2Runner implements ApplicationRunner {
     @Override
     public void run(ApplicationArguments args) throws Exception {
         try(Connection connection = dataSource.getConnection()) {
+            System.out.println(dataSource.getClass());
             System.out.println(connection.getClass());
+            System.out.println(connection.getMetaData().getDriverName());
             System.out.println(connection.getMetaData().getURL());
             System.out.println(connection.getMetaData().getUserName());
 
