@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class CorsController {
 
-    @CrossOrigin("http://localhost:8081")
+//    @CrossOrigin("http://localhost:8081")
     @GetMapping("/cors")
     public String cors() {
         return "cors";
