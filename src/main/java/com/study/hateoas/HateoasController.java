@@ -10,7 +10,7 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 @RestController
 public class HateoasController {
 
-    @GetMapping("/hello")
+    @GetMapping("/hateoas")
     public EntityModel<Hello> hello() {
         Hello hello = new Hello("hi", "hello");
 

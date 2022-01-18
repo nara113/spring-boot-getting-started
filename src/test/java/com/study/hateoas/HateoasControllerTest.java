@@ -21,7 +21,7 @@ class HateoasControllerTest {
 
     @Test
     void test() throws Exception {
-        mockMvc.perform(get("/hello"))
+        mockMvc.perform(get("/hateoas"))
                 .andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$._links.self").exists());
