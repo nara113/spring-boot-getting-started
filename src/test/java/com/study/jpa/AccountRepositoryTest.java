@@ -39,7 +39,7 @@ class AccountRepositoryTest {
 
     @Test
     void test2() {
-        Account account = new Account(1L, "hi");
+        Account account = new Account(1L, "hi", true);
 
         final Account realAccount = accountRepository.save(account);
         assertNotNull(realAccount);
