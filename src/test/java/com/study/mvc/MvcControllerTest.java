@@ -1,11 +1,9 @@
 package com.study.mvc;
 
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.http.MediaType;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
 
 import static org.hamcrest.CoreMatchers.equalTo;
@@ -13,7 +11,6 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
-@ExtendWith(SpringExtension.class)
 @WebMvcTest(MvcController.class)
 public class MvcControllerTest {
 
@@ -30,6 +27,7 @@ public class MvcControllerTest {
                 .content(user))
             .andExpect(status().isOk())
             .andExpect(jsonPath("$.name", is(equalTo("me"))))
+            .andExpect(jsonPath("$.name").value("me"))
             .andExpect(jsonPath("$.name", is("me")))
             .andExpect(jsonPath("$.password", is(equalTo(123))));
     }
